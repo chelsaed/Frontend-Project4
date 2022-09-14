@@ -3,6 +3,8 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import HomePg from './components/HomePg';
+import Athletedetails from './components/AthleteDetails';
+import AthletesPg from './components/AthletesPg';
 
 
 
@@ -17,22 +19,20 @@ function App() {
           Welcome to High School Athletes
           
       </h1>
+
+      <p>This is a website used for High School recuiters to get infomation about current high school players seeking college recruitment. These high school athletes show passion and skill in their sport. Please browser through the athlete profiles to learn more about what these high school athletes have to offer.  </p>
       
 
-      <Link to={'/HomePg'}>Home</Link>
+      <Link to={'/HomePg'}>Browse Athletes</Link>
         <Routes>
 
-
-          <Route path='/homepg' element={<HomePg />} />
-
-          {/* /* /* like an attribute data request = blank */
-    /* // <Route path='/new-coffee' element={ <NewCoffee addCoffee={addToCoffee}  /> } />
-    // <Route path='/coffee/edit/:id/' element={ <CoffeeEdit  setCoffees={setCoffees} /> } />
-    // <Route path='/coffee/:id' element={ <CoffeeView coffees={coffees}/>} />  */ }
+        
+          <Route path='/HomePg' element={<HomePg />} />
+          <Route path='/athletespg' element={<AthletesPg />} />
+          <Route path="/athletedetails/:id" element={ <Athletedetails/>}/>
 
 
-          {/* <Route path="/" element={ <Birds />} />
-    <Route path="/details/:id" element={ <BirdDetails/>}/> */}
+         
         </Routes>
 
     </div>

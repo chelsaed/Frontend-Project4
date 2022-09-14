@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 
 function AthletesPg() {
     const [ athletes, setAthletes  ] = useState([])
@@ -16,26 +17,26 @@ function AthletesPg() {
   
    return (
  
-//     <section className="container">
-//         {birds.map(bird =>{
-//             return(
-//         <Link to={`/details/${bird.id}`} key={bird.id}>
-       <div className="card">
-             {/* <div className="card-image">
-             <img */}
-        {/* //     src={bird.image}
-        //     alt={bird.name}
-        //     /> */}
+     <section className="container">
+         {athletes.map(athlete =>{
+             return(
+         <Link to={`/athletedetails/${athlete._id}`} key={athlete._id}>
+       <div className="athletepic">
+              <div className="athlete-image">
+             <img 
+             src={athlete.image}
+             alt={athlete.name}
+             /> 
          </div>
-        // <div className="card-title">
-        // <h3>{bird.name}</h3>
-        // </div>
-//         </div>
-//         </Link>           
+         <div className="profiles">
+         <h3>{athlete.name}</h3>
+         </div>
+         </div>
+         </Link>           
 
-//             )
-//         })}
-//     </section>
+             )
+         })}
+    </section>
   );
 }
 
