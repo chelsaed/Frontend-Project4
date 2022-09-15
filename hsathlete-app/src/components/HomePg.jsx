@@ -1,5 +1,6 @@
 import React from 'react'
-import AthletesPg from './AthletesPg'
+import AthletesPg from './AthletesPg';
+
 
 
   function HomePg ({athletes}) {

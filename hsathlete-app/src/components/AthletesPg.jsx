@@ -20,19 +20,19 @@ function AthletesPg() {
      <section className="container">
          {athletes.map(athlete =>{
              return(
-         <Link to={`/athletedetails/${athlete._id}`} key={athlete._id}>
-       <div className="athletepic">
-              <div className="athlete-image">
-             <img 
-             src={athlete.image}
-             alt={athlete.name}
-             /> 
-         </div>
-         <div className="profiles">
-         <h3>{athlete.name}</h3>
-         </div>
-         </div>
-         </Link>           
+              <><div className="athlete-image">
+                 <img
+                   src={athlete.image}
+                   alt={athlete.name} />
+               </div><Link to={`/athletedetails/${athlete._id}`} key={athlete._id}>
+                   <div className="athletepic">
+
+                     <div className="profiles">
+                       <h3>{athlete.name}</h3>
+                     </div>
+                   </div>
+                 </Link></>   
+        
 
              )
          })}

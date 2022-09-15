@@ -4,7 +4,8 @@ import { Routes, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import HomePg from './components/HomePg';
 import Athletedetails from './components/AthleteDetails';
-import AthletesPg from './components/AthletesPg';
+
+
 
 
 
@@ -28,7 +29,6 @@ function App() {
 
         
           <Route path='/HomePg' element={<HomePg />} />
-          <Route path='/athletespg' element={<AthletesPg />} />
           <Route path="/athletedetails/:id" element={ <Athletedetails/>}/>
 
 
