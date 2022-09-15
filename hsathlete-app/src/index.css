@@ -1,10 +1,12 @@
 body {
+  background: url(https://c8.alamy.com/comp/HY37EC/sports-background-colorful-design-vector-illustration-design-HY37EC.jpg);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {

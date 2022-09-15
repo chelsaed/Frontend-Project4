@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import './AthletesPg.css'
 
 
 function AthletesPg() {
@@ -21,7 +22,7 @@ function AthletesPg() {
          {athletes.map(athlete =>{
              return(
               <><div className="athlete-image">
-                 <img
+                 <img 
                    src={athlete.image}
                    alt={athlete.name} />
                </div><Link to={`/athletedetails/${athlete._id}`} key={athlete._id}>
