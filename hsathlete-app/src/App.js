@@ -30,6 +30,7 @@ function App() {
         
           <Route path='/HomePg' element={<HomePg />} />
           <Route path="/athletedetails/:id" element={ <Athletedetails/>}/>
+          
 
 
          
