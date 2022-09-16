@@ -8,11 +8,12 @@ import LoginPage from './pages/LoginPage';
 import userService from './utils/userService';
 import { useState, useEffect } from 'react'
 import SignupForm from './pages/SignupForm';
+import AthleteProfilePage from './pages/AthleteProfilePage';
 
 
 
-
-
+let user = userService.getUser();
+console.log(user)
 function App() {
   const setState = useState([]);
 
@@ -46,6 +47,7 @@ function App() {
           <Route path='/HomePg' element={<HomePg />} />
           <Route path="/athletedetails/:id" element={ <Athletedetails/>}/>
           <Route path='/login' element={<LoginPage handleSignupOrLogin={handleSignupOrLogin}/>}/>
+          <Route path='/athleteprofile/:id' element={<AthleteProfilePage/>}/>
           <Route path='/signup' element={<SignupForm handleSignupOrLogin={handleSignupOrLogin}/>}/>    
           <Route path= '/logout' element={<LoginPage handleLogout={handleLogout}/>}/>
 
