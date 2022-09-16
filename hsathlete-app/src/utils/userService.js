@@ -4,7 +4,7 @@ const BASE_URL = 'http://localhost:8000/api/users';
 
 async function signup(user) {
   console.log("user", user)
-   return await fetch(BASE_URL + '/signup', {
+    await fetch(BASE_URL + '/signup', {
     method: 'POST',
     headers:{'Content-Type': 'application/json'},
     body: JSON.stringify(user)
@@ -14,8 +14,8 @@ async function signup(user) {
     // Probably a duplicate email
     throw new Error('Email already taken!');
   })
-  // Parameter destructuring!
-  .then(({token}) => tokenService.setToken(token));
+  // Parameter destructuring! .then(({token}) => 
+  tokenService.setToken(token);
   
 }
 
