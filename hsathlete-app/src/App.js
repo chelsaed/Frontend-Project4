@@ -18,7 +18,7 @@ let userId = user._id;
 console.log(user, 'this is a test')
 function App() {
   const  [state, setState] = useState({});
-  //const  [user, setUser] = useState({});
+  
   let handleLogout = () => {
     userService.logout();
     setState({ user: null });
