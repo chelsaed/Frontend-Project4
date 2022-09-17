@@ -50,7 +50,7 @@ class LoginPage extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <Link to='/editprofile/:id'>Log In</Link>&nbsp;&nbsp;&nbsp;
+              <button type='submit' className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
               <Link to='/'>Cancel</Link>
             </div>
           </div>

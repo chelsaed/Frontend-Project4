@@ -39,11 +39,14 @@ function App() {
       <p>This is a website used for High School recuiters to get infomation about current high school players seeking college recruitment. These high school athletes show passion and skill in their sport. Please browser through the athlete profiles to learn more about what these high school athletes have to offer.  </p>
    
       
-      <Link to={'/AthleteGallery'}>Athlete Gallery</Link>
+      <Link to={'/athletegallery'}>Athlete Gallery</Link>
       &nbsp;&nbsp;&nbsp;
       <Link to={'/signup'}>Athlete Sign Up</Link>
       &nbsp;&nbsp;&nbsp;
       <Link to={'/login'}>Athlete Login</Link>
+      &nbsp;&nbsp;&nbsp;
+      <Link to={'/editprofile/:id'}>EditAthleteProfilePage</Link>
+      &nbsp;&nbsp;&nbsp;
         <Routes>
           
           <Route path='/athletegallery' element={<AthleteGallery/>} />
