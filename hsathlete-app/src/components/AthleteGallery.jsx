@@ -3,12 +3,14 @@ import AthletesPg from './AthletesPg';
 
 
 
-  function HomePg ({athletes}) {
+
+  function AthleteGalley ({athletes}) {
     return (
-      <div className="HomePg">
+      <div className="AthleteGallery">
         
           <h1>High School Athletes</h1>
           <AthletesPg athletes={athletes}/>
+          
        
           {/* <AthletesPg athletes={athletes}/> */}
         
@@ -23,4 +25,4 @@ import AthletesPg from './AthletesPg';
       
 
 
-export default HomePg
+export default AthleteGalley

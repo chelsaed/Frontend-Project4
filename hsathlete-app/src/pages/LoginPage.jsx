@@ -19,6 +19,7 @@ class LoginPage extends Component {d
 
   handleSubmit = async (e) => {
     e.preventDefault();
+      console.log(this.state)
     try {
       await userService.login(this.state);
       // Let <App> know a user has signed up!

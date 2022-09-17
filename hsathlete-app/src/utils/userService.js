@@ -15,7 +15,10 @@ async function signup(user) {
     throw new Error('Email already taken!');
   })
   // Parameter destructuring! .then(({token}) => 
-  tokenService.setToken(token);
+  
+  .then((token) => token.token)
+ 
+
   
 }
 
@@ -28,7 +31,7 @@ function logout() {
 }
 
 function login(creds) {
-  return fetch(BASE_URL + 'login', {
+  return fetch(BASE_URL + '/login', {
     method: 'POST',
     headers:{'Content-Type': 'application/json'},
     body: JSON.stringify(creds)
