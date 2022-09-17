@@ -1,11 +1,12 @@
 import tokenService from './tokenService';
 
-const BASE_URL = '/api/users/';
+const BASE_URL = 'http://localhost:8000/api/users/';
 
-function signup(user) {
-  return fetch(BASE_URL + 'signup', {
+async function signup(user) {
+  console.log("user", user)
+    await fetch(BASE_URL + 'signup', {
     method: 'POST',
-    headers: new Headers({'Content-Type': 'application/json'}),
+    headers:{'Content-Type': 'application/json'},
     body: JSON.stringify(user)
   })
   .then(res => {
@@ -13,8 +14,11 @@ function signup(user) {
     // Probably a duplicate email
     throw new Error('Email already taken!');
   })
-  // Parameter destructuring!
-  .then(({token}) => tokenService.setToken(token));
+  // Parameter destructuring! .then(({token}) => 
+  
+  .then((token) => token.token)
+ 
+
   
 }
 
@@ -29,7 +33,7 @@ function logout() {
 function login(creds) {
   return fetch(BASE_URL + 'login', {
     method: 'POST',
-    headers: new Headers({'Content-Type': 'application/json'}),
+    headers:{'Content-Type': 'application/json'},
     body: JSON.stringify(creds)
   })
   .then(res => {

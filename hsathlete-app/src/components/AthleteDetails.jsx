@@ -10,7 +10,7 @@ const AthleteDetails = ({props}) => {
     const {id} = useParams()
   
       useEffect(()=> {
-        fetch(`http://localhost:8000/highschoolathlete/${id}`)
+        fetch(`http://localhost:8000/api/users/${id}`)
         .then((res) => res.json())
         .then((json) => setAthletesDetails(json))
         .catch(console.error)

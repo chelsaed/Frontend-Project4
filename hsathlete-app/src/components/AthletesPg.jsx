@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import './AthletesPg.css'
+import axios from 'axios';
+
 
 
 function AthletesPg() {
     const [ athletes, setAthletes  ] = useState([])
   
       useEffect(() => {
-        fetch('http://localhost:8000/highschoolathlete')
-        .then( res => res.json())
+        axios.get('http://localhost:8000/api/users/')
+        .then( res => res.data)
         .then( athletes => {
           console.log(athletes)
           setAthletes(athletes)})
@@ -18,17 +21,17 @@ function AthletesPg() {
    return (
  
      <section className="container">
-         {athletes.map(athlete =>{
+         {athletes.map(user =>{
              return(
               <><div className="athlete-image">
-                 <img
-                   src={athlete.image}
-                   alt={athlete.name} />
-               </div><Link to={`/athletedetails/${athlete._id}`} key={athlete._id}>
+                 <img 
+                   src={user.athlete.image}
+                   alt={user.name} />
+               </div><Link to={`/athletedetails/${user._id}`} key={user._id}>
                    <div className="athletepic">
 
                      <div className="profiles">
-                       <h3>{athlete.name}</h3>
+                       <h3>{user.name}</h3>
                      </div>
                    </div>
                  </Link></>   
