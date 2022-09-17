@@ -17,8 +17,8 @@ let user = userService.getUser();
 let userId = user._id;
 console.log(user, 'this is a test')
 function App() {
-  const  [state, setState] = useState([]);
-
+  const  [state, setState] = useState({});
+  //const  [user, setUser] = useState({});
   let handleLogout = () => {
     userService.logout();
     setState({ user: null });
@@ -48,8 +48,8 @@ function App() {
           
           <Route path='/athletegallery' element={<AthleteGallery/>} />
           <Route path="/athletedetails/:id" element={ <Athletedetails/>}/>
-          <Route path='/login' element={<LoginPage handleSignupOrLogin={handleSignupOrLogin}/>}/>
-          <Route path='/athleteprofile/:id' element={<AthleteProfilePage/>}/>
+          <Route path='/login' element={<LoginPage handleSignupOrLogin={handleSignupOrLogin} setState={setState}/>} />
+          <Route path='/:id' element={<AthleteProfilePage/>}/>
           <Route path='/editprofile/:id' element={<EditAthleteProfilePage userId={userId}/>}/>
           <Route path='/signup' element={<SignupForm handleSignupOrLogin={handleSignupOrLogin}/>}/>    
           <Route path= '/logout' element={<LoginPage handleLogout={handleLogout}/>}/>

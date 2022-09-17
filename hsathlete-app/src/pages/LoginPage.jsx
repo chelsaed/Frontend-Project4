@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
-import userService from '../../src/utils/userService';
+import userToken from '../../src/utils/userService';
 
-class LoginPage extends Component {d
-  
+
+class LoginPage extends Component {
+    
   state = {
     email: '',
     pw: ''
@@ -13,7 +14,7 @@ class LoginPage extends Component {d
   handleChange = (e) => {
     this.setState({
       // Using ES2015 Computed Property Names
-      [e.target.name]: e.target.value
+       ...this.state, [e.target.name]: e.target.value
     });
   }
 
@@ -21,11 +22,11 @@ class LoginPage extends Component {d
     e.preventDefault();
       console.log(this.state)
     try {
-      await userService.login(this.state);
+      await userToken.login(this.state);
       // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();
       // Successfully signed up 
-      this.props.history.push('/');
+      this.props.history.push('/login/:id');
     } catch (err) {
       // Use a modal or toast in your apps instead of alert
       alert('Invalid Credentials!');
@@ -34,9 +35,9 @@ class LoginPage extends Component {d
 
   render() {
     return (
-      <div className="LoginPage">
+      <div className="LoginPage" onSubmit={this.handleSubmit}>
         <header className="header-footer">Log In</header>
-        <form className="form-horizontal" onSubmit={this.handleSubmit} >
+        <form method='POST' className="form-horizontal"  >
           <div className="form-group">
             <div className="col-sm-12">
               <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
@@ -49,7 +50,7 @@ class LoginPage extends Component {d
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
+              <Link to='/editprofile/:id'>Log In</Link>&nbsp;&nbsp;&nbsp;
               <Link to='/'>Cancel</Link>
             </div>
           </div>

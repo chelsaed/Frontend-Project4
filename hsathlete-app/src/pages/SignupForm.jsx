@@ -4,6 +4,7 @@ import userService from '../../src/utils/userService';
 // import { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 
+
 class SignupForm extends Component {
 
   state = {
@@ -61,13 +62,13 @@ class SignupForm extends Component {
               <input type="text" className="form-control" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
             </div>
           </div>
-          {/* <div className="form-group">
+           <div className="form-group">
           <div className="col-sm-12">
               <input type="text" className="form-control" placeholder="Confirm Password" value={this.state.passwordConf} name="passwordconf" onChange={this.handleChange} />
             </div>
-          </div> */}
+          </div> 
 
-          <button>Sign Up</button>
+          <Link to='/editprofile/:id'>Sign Up</Link>
               <Link to='/'>Cancel</Link>
               </form> 
             </div>

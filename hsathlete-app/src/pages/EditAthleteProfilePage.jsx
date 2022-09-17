@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import {Link} from 'react-router-dom'
+
 
 
 const EditAthlete = ({ setAthlete, userId }) => {
@@ -31,7 +33,7 @@ const EditAthlete = ({ setAthlete, userId }) => {
             let res = await axios.put(`http://localhost:8000/api/users/addathlete/${userId}`, formData);
             setFormData(initialState);
             setAthlete(res.data);
-            navigate("/athletegallery", { replace: true });
+            navigate("/editprofile", { replace: true });
 
 
         } catch (err) {
@@ -121,7 +123,7 @@ const EditAthlete = ({ setAthlete, userId }) => {
             </div>
 
             <div className="button">
-                <button>Submit</button>
+                <Link to='/athletegallery'>Submit</Link>
             </div>
         </form>
     );
